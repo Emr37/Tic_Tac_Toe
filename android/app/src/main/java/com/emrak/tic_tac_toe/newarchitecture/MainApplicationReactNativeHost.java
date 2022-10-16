@@ -1,4 +1,4 @@
-package com.tic_tac_toe.newarchitecture;
+package com.emrak.tic_tac_toe.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.tic_tac_toe.BuildConfig;
-import com.tic_tac_toe.newarchitecture.components.MainComponentsRegistry;
-import com.tic_tac_toe.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.emrak.tic_tac_toe.BuildConfig;
+import com.emrak.tic_tac_toe.newarchitecture.components.MainComponentsRegistry;
+import com.emrak.tic_tac_toe.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

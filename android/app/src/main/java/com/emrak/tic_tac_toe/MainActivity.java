@@ -1,4 +1,4 @@
-package com.tic_tac_toe;
+package com.emrak.tic_tac_toe;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

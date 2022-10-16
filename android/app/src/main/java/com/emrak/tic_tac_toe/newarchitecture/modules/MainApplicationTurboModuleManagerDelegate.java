@@ -1,4 +1,4 @@
-package com.tic_tac_toe.newarchitecture.modules;
+package com.emrak.tic_tac_toe.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
