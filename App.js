@@ -5,23 +5,27 @@ const App = () => {
   const [turn, setTurn] = useState('X');
   const [cells, setCells] = useState(Array(9).fill(''));
   const [winner, setWinner] = useState('');
-  const [scoreless, setScoreless] = useState('');
+  const [scoreless, setScoreless] = useState(false);
   let [countX, setCountX] = useState(0);
   let [countO, setCountO] = useState(0);
 
-  const handleClick = (num) => {
-    let squares = [...cells];
 
-    if (winner !== '') {
+
+  
+  const handleClick = (num) => {
+    let squares = [...cells];    
+
+    if (winner !== '' || scoreless) {
+      
       return;
 
-    }else{
+    } else {
 
       if (cells[num] !== "") {
         alert("This box has been used");
         return;
       }
-
+      
       if (turn === 'X') {
         squares[num] = 'X';
         setTurn('O');
@@ -30,24 +34,21 @@ const App = () => {
         setTurn('X');
       }
 
-      setCells(squares);
+      setCells(squares); 
+      
+      if (winner !== '') {
+        return;
+      } else {
+        checkForScoreless(squares);
+      }
 
     }
 
     checkForWinner(squares);
-
-    if (winner !== '') {
-      checkForScoreless(squares);
-    }
+    
   }
 
-  const checkForScoreless = (e) => {
-    if (e.indexOf('') === -1) {
-      alert('The game is scoreless');
-      return;
-    }
-  }
-
+  
   const checkForWinner = (squares) => {
 
     let combos = {
@@ -100,29 +101,25 @@ const App = () => {
           } else {
             setCountO(Number(countO) + 1)
           };
-
         }
-
-
-
-
-
-
       }
-
       )
-
     };
+  }
 
-  };
+  const checkForScoreless = (e) => {
+    if (e.indexOf('') === -1) {
+      setScoreless(true);
+      alert('The game is scoreless'); 
+      return; 
+    }
+  }
 
   const handleRestart = () => {
     setWinner('');
     setCells(Array(9).fill(''));
     setTurn('X');
-    setScoreless('');
-
-
+    setScoreless(false);
   }
 
   const Cell = ({ num }) => {
